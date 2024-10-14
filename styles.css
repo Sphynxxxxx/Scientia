@@ -378,5 +378,25 @@ footer {
         padding: 8px 15px;
         margin-top: 10px;
     }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-title {
+        font-size: 1.8rem;
+    }
+
+    .news-content {
+        padding: 15px;
+    }
+
+    .news-heading {
+        font-size: 1.2rem;
+    }
+
+    .news-description {
+        font-size: 0.9rem;
+    }
     
 }
