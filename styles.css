@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Side */
+header {
+    background-image: url('assets/3d-render-solar-system-background-with-colourful-nebula.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: white;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.logo h1 {
+    display: flex;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 150px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    margin-right: 150px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: normal;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+.login-button {
+    padding: 8px 15px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0px 20px;
+    width: 300px;
+    max-width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    padding-left: 10px;
+    caret-color: white;
+}
+
+.search-button {
+    background: transparent;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button i {
+    color: white;
+    font-size: 1.2rem;
+}
+/* End of Header Side */
+
+/* For mobile dropdown */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-nav {
+    background-color: transparent;
+    padding: 10px 0;
+    margin-top: 0;
+}
+
+.dropdown-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    padding: 10px;
+    margin: auto;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    display: inline-block; 
+    padding: 10px 0; 
+    transition: color 0.3s;
+}
+
+
+.dropdown-link:hover {
+    color: darkblue;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0; 
+    width: 150px;
+    z-index: 1000;
+}
+
+
+.dropdown-menu li {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 5px 0;
+    transition: background-color 0.3s;
+}
+
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    visibility: visible;
+}
+/* End of Mobile Dropdown */
+
+/* News Side */
+.news-section {
+    padding: 50px;
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.news-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+.news-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.news-content {
+    padding: 20px;
+}
+
+.news-heading {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.news-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+.news-meta {
+    font-size: 0.9rem;
+    color: #999;
+    display: flex;
+    justify-content: flex-end;
+}
+/* End of News Side */
+
+/* Footer Side */
+footer {
+    background-color: #000;
+    background-image: url('assets/3d-render-solar-system-background-with-colourful-nebula.jpg');
+    background-position: bottom center;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.social-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: darkblue;
+}
+
+/* End of Footer Side */
+
+/* Responsive Side */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header {
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    header.open nav {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background-color: black;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin: 10px 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .login-button {
+        width: 100%;
+    }
+
+    .dropdown-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        padding: 0;
+    }
+
+    .dropdown-menu li {
+        text-align: left;
+        padding: 10px 20px;
+    }
+    
+    .search-container {
+        width: 90%;
+        padding: 8px 15px;
+        margin-top: 10px;
+    }
+    
+}
