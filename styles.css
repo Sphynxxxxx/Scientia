@@ -281,6 +281,8 @@ footer {
     background-color: #000;
     background-image: url('assets/3d-render-solar-system-background-with-colourful-nebula.jpg');
     background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     padding: 10px;
     display: flex;
