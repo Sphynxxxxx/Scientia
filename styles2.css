@@ -133,3 +133,21 @@ figcaption {
 }
 
 /* End of Planet Article Section */
+/*Responsiveness*/
+@media (max-width: 768px) {
+    .article-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .article-title {
+        font-size: 1.6rem;
+    }
+
+    .article-subtitle {
+        font-size: 1rem;
+    }
+    .submit-comment {
+        width: 100%; /* Full width for comment button on small screens */
+    }
+}

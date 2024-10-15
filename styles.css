@@ -366,6 +366,10 @@ footer {
 
 
 @media (max-width: 768px) {
+    .main-content {
+        margin-left: 0px;
+        padding-left: 0;
+    }
 
     .header {
         padding: 10px;
@@ -377,9 +381,7 @@ footer {
     }
 
     .logo h1 {
-        font-size: 1.8rem; /* Adjust for mobile */
-        
-        
+        font-size: 1.8rem; /* Adjust for mobile */    
     }
 
     .mobile-menu-toggle {
@@ -462,9 +464,6 @@ footer {
     }
 
     /* Ensure main content takes full width */
-    .main-content {
-        margin-left: 0;
-    }
 
 }
 
