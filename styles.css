@@ -27,7 +27,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 0 10px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 10;
@@ -39,6 +39,7 @@ header {
     font-size: 4rem;
     font-weight: bold;
     cursor: pointer;
+    white-space: nowrap;
     margin-left: 100px;
 }
 
