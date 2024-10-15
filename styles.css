@@ -40,7 +40,7 @@ header {
     font-weight: bold;
     cursor: pointer;
     white-space: nowrap;
-    margin-left: 0px;
+    margin-left: 100px;
 }
 
 nav {
@@ -378,6 +378,7 @@ footer {
 
     .logo h1 {
         font-size: 1.8rem;
+        margin-left: 0px;
     }
 
     .mobile-menu-toggle {
