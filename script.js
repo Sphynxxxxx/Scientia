@@ -21,7 +21,7 @@ const commentButton = document.querySelector('.comment-button');
 const commentSection = document.querySelector('.comment-section');
 
 commentButton.addEventListener('click', () => {
-    // Toggle the display of the comment section
+    
     commentSection.style.display = 
         commentSection.style.display === 'none' ? 'block' : 'none';
 });
@@ -35,15 +35,16 @@ submitCommentButton.addEventListener('click', () => {
     const commentText = commentInput.value.trim();
 
     if (commentText) {
-        // Create a new comment element
+        
         const newComment = document.createElement('div');
         newComment.classList.add('comment');
         newComment.textContent = commentText;
 
-        // Append the new comment to the comments display
+        
         commentsDisplay.appendChild(newComment);
 
-        // Clear the input field
         commentInput.value = '';
     }
 });
+
+

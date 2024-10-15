@@ -8,232 +8,253 @@
     <link rel="stylesheet" href="styles.css">
     <title>Scientia</title>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <h1>SKĒˈENTĒƎ</h1>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <div class="search-container">
-                    <input type="text" class="search-input" placeholder="Search">
-                    <button class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Profile</a></li>
-                <li><a href="#" class="nav-link">About Us</a></li>
-                <li>
-                    <button class="login-button">Login/Register</button>
+
+    
+    <div class="sidebar" id="sidebar">
+        <h2>Sidebar</h2>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i> Menu
+    </button>
+
+
+    
+
+    <div class="main-content">
+        <header>
+            <div class="logo">
+                <h1>SKĒˈENTĒƎ</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search">
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Profile</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                    <li>
+                        <button class="login-button">Login/Register</button>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i>
+        </header>
+        <section class="dropdown-nav">
+            <ul class="dropdown-links">
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-link">News</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-link">Discover the Cosmos<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Planets.html">Planets</a></li>
+                        <li><a href="#">Stars</a></li>
+                        <li><a href="#">Galaxies</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-link">Observation Hub<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Telescope Setup</a></li>
+                        <li><a href="#">Stargazing Tips</a></li>
+                        <li><a href="#">Astronomy Events</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-link">Science & Mysteries<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-link">Space Missions & Exploration<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-link">Astronomy Tools & Apps<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
                 </li>
             </ul>
-        </nav>
-        <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i>
-    </header>
+        </section>
 
-    <section class="dropdown-nav">
-        <ul class="dropdown-links">
-            <li class="dropdown">
-                <a href="index.html" class="dropdown-link">News</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-link">Discover the Cosmos<i class="fa-solid fa-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="Planets.html">Planets</a></li>
-                    <li><a href="#">Stars</a></li>
-                    <li><a href="#">Galaxies</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-link">Observation Hub<i class="fa-solid fa-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Telescope Setup</a></li>
-                    <li><a href="#">Stargazing Tips</a></li>
-                    <li><a href="#">Astronomy Events</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-link">Science & Mysteries<i class="fa-solid fa-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-link">Space Missions & Exploration<i class="fa-solid fa-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-link">Astronomy Tools & Apps<i class="fa-solid fa-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section class="news-section">
-        <h2 class="news-title">Latest News</h2>
-        <div class="news-grid">
-           
-            <div class="news-card">
-                <img src="assets/exoplanet.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">Astronomers Discover New Exoplanet</h3>
-                    <p class="news-description">
-                        A newly discovered exoplanet raises the possibility of habitable conditions beyond Earth.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 15, 2024</span>
-                    </div>
-                </div>
-            </div>
-    
+        <section class="news-section">
+            <h2 class="news-title">Latest News</h2>
+            <div class="news-grid">
             
-            <div class="news-card">
-                <img src="assets/lunar-activities.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">NASA Announces New Lunar Mission</h3>
-                    <p class="news-description">
-                        The Artemis program is preparing for a return to the Moon with advanced technology.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 14, 2024</span>
+                <div class="news-card">
+                    <img src="assets/exoplanet.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">Astronomers Discover New Exoplanet</h3>
+                        <p class="news-description">
+                            A newly discovered exoplanet raises the possibility of habitable conditions beyond Earth.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 15, 2024</span>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="news-card">
+                    <img src="assets/lunar-activities.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">NASA Announces New Lunar Mission</h3>
+                        <p class="news-description">
+                            The Artemis program is preparing for a return to the Moon with advanced technology.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 14, 2024</span>
+                        </div>
+                    </div>
+                </div>
+        
+                
+                <div class="news-card">
+                    <img src="assets/Comet-ISON.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">Comet to Pass Close to Earth</h3>
+                        <p class="news-description">
+                            Stargazers are in for a treat as the rare comet C/2024 Q1 will be visible this month.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 13, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/magellan_orbit-768x577.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">30 years ago: Magellan Venus mission successfully concluded</h3>
+                        <p class="news-description">
+                            Thirty years ago, NASA's Magellan mission to Venus concluded after mapping 98% of the planet's surface, revolutionizing our understanding of its geology.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 15, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/Tania-Wood-88-768x509.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">The best images of the Oct. 10 auroral storm</h3>
+                        <p class="news-description">
+                            Auroral storm dazzled skywatchers with breathtaking displays of vibrant green, purple, and red auroras, stretching across the night skies from high latitudes to unexpected southern regions.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 11, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/europa-clipper-art-768x432.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">All about NASA’s Europa Clipper, launching soon for Jupiter</h3>
+                        <p class="news-description">
+                            NASA’s Europa Clipper, set to launch soon, will embark on a journey to explore Jupiter’s moon Europa, searching for signs of a subsurface ocean and potential habitability.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 14, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/BuckMoon2016.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">2024 Full Moon calendar: When to see the Full Moon and phases</h3>
+                        <p class="news-description">
+                            The 2024 Full Moon calendar highlights the dates of each Full Moon and lunar phases, helping you track the best nights for moon-gazing throughout the year.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">January 1, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/Morehouses-black-ring.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">How we found Morehouse’s Black Ring: A dark nebula hiding in plain sight</h3>
+                        <p class="news-description">
+                            Discover how astronomers identified Morehouse’s Black Ring, a hidden dark nebula obscuring starlight, lurking undetected in the vast expanse of space.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 16, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/clipper.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">Europa Clipper launch postponed until at least Oct. 13 due to Hurricane Milton</h3>
+                        <p class="news-description">
+                            NASA's highly anticipated Europa Clipper mission has been postponed until at least October 13, 2024, following disruptions caused by Hurricane Milton.
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 13, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <img src="assets/Comet Tsuchinshan.webp" alt="News Image" class="news-image">
+                    <div class="news-content">
+                        <h3 class="news-heading">Comet Tsuchinshan-ATLAS is rising higher in the evening sky. Here’s where to look</h3>
+                        <p class="news-description">
+                            Starting around October 14, 2024, Comet Tsuchinshan-ATLAS (C/2023 A3) will become visible in the early evening, making it easier to spot without the glare of the Sun. 
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-date">October 14, 2024</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
     
-            
-            <div class="news-card">
-                <img src="assets/Comet-ISON.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">Comet to Pass Close to Earth</h3>
-                    <p class="news-description">
-                        Stargazers are in for a treat as the rare comet C/2024 Q1 will be visible this month.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 13, 2024</span>
-                    </div>
-                </div>
+
+
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Scientia. All Rights Reserved.</p>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/larrydenver.biaco"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/_larrryyyyyy/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://github.com/Sphynxxxxx"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+                <p>by Larry Denver Biaco</p>
             </div>
-
-            <div class="news-card">
-                <img src="assets/magellan_orbit-768x577.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">30 years ago: Magellan Venus mission successfully concluded</h3>
-                    <p class="news-description">
-                        Thirty years ago, NASA's Magellan mission to Venus concluded after mapping 98% of the planet's surface, revolutionizing our understanding of its geology.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 15, 2024</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="assets/Tania-Wood-88-768x509.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">The best images of the Oct. 10 auroral storm</h3>
-                    <p class="news-description">
-                        Auroral storm dazzled skywatchers with breathtaking displays of vibrant green, purple, and red auroras, stretching across the night skies from high latitudes to unexpected southern regions.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 11, 2024</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="assets/europa-clipper-art-768x432.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">All about NASA’s Europa Clipper, launching soon for Jupiter</h3>
-                    <p class="news-description">
-                        NASA’s Europa Clipper, set to launch soon, will embark on a journey to explore Jupiter’s moon Europa, searching for signs of a subsurface ocean and potential habitability.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 14, 2024</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="assets/BuckMoon2016.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">2024 Full Moon calendar: When to see the Full Moon and phases</h3>
-                    <p class="news-description">
-                        The 2024 Full Moon calendar highlights the dates of each Full Moon and lunar phases, helping you track the best nights for moon-gazing throughout the year.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">January 1, 2024</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="assets/Morehouses-black-ring.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">How we found Morehouse’s Black Ring: A dark nebula hiding in plain sight</h3>
-                    <p class="news-description">
-                        Discover how astronomers identified Morehouse’s Black Ring, a hidden dark nebula obscuring starlight, lurking undetected in the vast expanse of space.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 16, 2024</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="assets/clipper.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">Europa Clipper launch postponed until at least Oct. 13 due to Hurricane Milton</h3>
-                    <p class="news-description">
-                        NASA's highly anticipated Europa Clipper mission has been postponed until at least October 13, 2024, following disruptions caused by Hurricane Milton.
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 13, 2024</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <img src="assets/Comet Tsuchinshan.webp" alt="News Image" class="news-image">
-                <div class="news-content">
-                    <h3 class="news-heading">Comet Tsuchinshan-ATLAS is rising higher in the evening sky. Here’s where to look</h3>
-                    <p class="news-description">
-                        Starting around October 14, 2024, Comet Tsuchinshan-ATLAS (C/2023 A3) will become visible in the early evening, making it easier to spot without the glare of the Sun. 
-                    </p>
-                    <div class="news-meta">
-                        <span class="news-date">October 14, 2024</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Scientia. All Rights Reserved.</p>
-            <ul class="social-links">
-                <li><a href="https://www.facebook.com/larrydenver.biaco"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/_larrryyyyyy/"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://github.com/Sphynxxxxx"><i class="fa-brands fa-github"></i></a></li>
-            </ul>
-            <p>by Larry Denver Biaco</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

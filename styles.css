@@ -9,6 +9,11 @@ body {
     background-color: #f4f4f4;
 }
 
+
+.main-content {
+    margin-left: 100px;
+    
+}
 /* Header Side */
 header {
     background-image: url('assets/3d-render-solar-system-background-with-colourful-nebula.jpg');
@@ -21,18 +26,24 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 50px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 10;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    max-width: 100%; 
+}
 .logo h1 {
     display: flex;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 150px;
+    white-space: nowrap;
+    margin-left: 100px;
 }
 
 nav {
@@ -118,6 +129,68 @@ nav {
     font-size: 1.2rem;
 }
 /* End of Header Side */
+/* Sidebar Side*/
+
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    padding: 20px;
+    transition: left 0.3s ease; /* Smooth slide effect */
+    z-index: 1000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.active {
+    left: 0; /* Slide into view */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ddd;
+}
+
+/* Toggle Button */
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.1); /* Hover effect */
+}
+
+/* End of Sidebar Side*/
 
 /* For mobile dropdown */
 .mobile-menu-toggle {
@@ -314,13 +387,9 @@ footer {
 /* End of Footer Side */
 
 /* Responsive Side */
+
+
 @media (max-width: 768px) {
-    .logo h1 {
-        font-size: 2rem;
-        margin-left: 0;
-        text-align: center;
-        width: 100%;
-    }
 
     .header {
         padding: 10px;
@@ -329,6 +398,12 @@ footer {
 
     nav {
         display: none;
+    }
+
+    .logo h1 {
+        font-size: 2rem; /* Adjust for mobile */
+        margin-left: 150px;
+        
     }
 
     .mobile-menu-toggle {
@@ -401,4 +476,19 @@ footer {
         font-size: 0.9rem;
     }
     
+    .sidebar {
+        transform: translateX(-100%); /* Move sidebar off-screen */
+    }
+
+    /* Sidebar active state to show on toggle */
+    .sidebar.active {
+        transform: translateX(0); /* Bring sidebar into view */
+    }
+
+    /* Ensure main content takes full width */
+    .main-content {
+        margin-left: 0;
+    }
+
 }
+
