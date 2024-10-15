@@ -33,11 +33,7 @@ header {
     z-index: 10;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    max-width: 100%; 
-}
+
 .logo h1 {
     display: flex;
     font-size: 4rem;
@@ -381,7 +377,7 @@ footer {
     }
 
     .logo h1 {
-        font-size: 1.8rem; /* Adjust for mobile */    
+        font-size: 1.8rem;
     }
 
     .mobile-menu-toggle {
@@ -455,15 +451,8 @@ footer {
     }
     
     .sidebar {
-        transform: translateX(-100%); /* Move sidebar off-screen */
+        transform: translateX(-100%); 
+
     }
-
-    /* Sidebar active state to show on toggle */
-    .sidebar.active {
-        transform: translateX(0); /* Bring sidebar into view */
-    }
-
-    /* Ensure main content takes full width */
-
 }
 
