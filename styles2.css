@@ -132,6 +132,37 @@ figcaption {
     border-radius: 4px;
 }
 
+.about-section {
+    margin-top: 20px;
+    padding: 5px 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+}
+
+.about-section h3, h2 {
+    margin-top: 30px;
+    text-align: center;
+}
+.about-section figcaption{
+    text-align: center;
+    font-size: 2rem;
+}
+.contact-section {
+    margin-top: 30px;
+    padding: 5px 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-section h2{
+    margin-bottom: 10px;
+
+}
+
 /* End of Planet Article Section */
 /*Responsiveness*/
 @media (max-width: 768px) {

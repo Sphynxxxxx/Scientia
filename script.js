@@ -3,7 +3,7 @@ const loginRegisterButton = document.querySelector('.login-button');
 
 if (loginRegisterButton) {
     loginRegisterButton.addEventListener('click', () => {
-        window.location.href = 'Login.html'; // Adjust path if needed
+        window.location.href = 'Login.html'; 
     });
 }
 
