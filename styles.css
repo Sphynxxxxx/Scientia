@@ -359,8 +359,6 @@ footer {
 /* End of Footer Side */
 
 /* Responsive Side */
-
-
 @media (max-width: 768px) {
     .main-content {
         margin-left: 0;
@@ -377,7 +375,7 @@ footer {
     }
 
     .logo h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-left: 0px;
     }
 
