@@ -1,3 +1,13 @@
+// Login/Register Button
+const loginRegisterButton = document.querySelector('.login-button');
+
+if (loginRegisterButton) {
+    loginRegisterButton.addEventListener('click', () => {
+        window.location.href = 'Login.html'; // Adjust path if needed
+    });
+}
+
+
 // Login/Signup Toggle
 const showSignup = document.getElementById('showSignup');
 const showLogin = document.getElementById('showLogin');
