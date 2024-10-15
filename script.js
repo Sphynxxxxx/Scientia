@@ -1,46 +1,58 @@
+// Login/Signup Toggle
+const showSignup = document.getElementById('showSignup');
+const showLogin = document.getElementById('showLogin');
+const loginBox = document.getElementById('loginBox');
+const signupBox = document.getElementById('signupBox');
+
+if (showSignup && showLogin) {
+    showSignup.addEventListener('click', () => {
+        loginBox.classList.add('hidden');
+        signupBox.classList.remove('hidden');
+    });
+
+    showLogin.addEventListener('click', () => {
+        signupBox.classList.add('hidden');
+        loginBox.classList.remove('hidden');
+    });
+}
+
 // Mobile Menu Toggle
 const toggleButton = document.querySelector('.mobile-menu-toggle');
 const header = document.querySelector('header');
 
 if (toggleButton && header) {
     toggleButton.addEventListener('click', () => {
-        header.classList.toggle('open'); 
+        header.classList.toggle('open');
     });
 }
 
 // Like Button Toggle
-const likeButtons = document.querySelectorAll('.like-button');
-
-likeButtons.forEach(button => {
+document.querySelectorAll('.like-button').forEach(button => {
     button.addEventListener('click', () => {
         const icon = button.querySelector('i');
-        icon.classList.toggle('liked'); // Toggle 'liked' class on the icon
+        icon.classList.toggle('liked');
     });
 });
 
-
-// Comment buttons Toggle
+// Comment Buttons Toggle
 const commentButtons = document.querySelectorAll('.comment-button');
 const commentSections = document.querySelectorAll('.comment-section');
 
+if (commentButtons.length && commentSections.length) {
+    commentSections.forEach(section => (section.style.display = 'none'));
 
-commentSections.forEach(section => (section.style.display = 'none'));
-
-
-commentButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        const section = commentSections[index];
-        section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    commentButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const section = commentSections[index];
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+        });
     });
-});
+}
 
-const shareButtons = document.querySelectorAll('.share-button');
-
-shareButtons.forEach(button => {
+// Share Button Copy to Clipboard
+document.querySelectorAll('.share-button').forEach(button => {
     button.addEventListener('click', () => {
-        const link = button.getAttribute('data-link'); // Get the link from data attribute
-
-        // Copy the link to clipboard
+        const link = button.getAttribute('data-link');
         navigator.clipboard.writeText(link).then(() => {
             alert('Link copied to clipboard!');
         }).catch(err => {
@@ -49,75 +61,40 @@ shareButtons.forEach(button => {
     });
 });
 
+// Submit Comment Functionality
 document.querySelectorAll('.submit-comment').forEach((submitButton, index) => {
     const commentSection = commentSections[index];
     const commentInput = commentSection.querySelector('.comment-input');
     const commentsDisplay = commentSection.querySelector('.comments-display');
 
     submitButton.addEventListener('click', () => {
-        const commentText = commentInput.value.trim(); 
-
+        const commentText = commentInput.value.trim();
         if (commentText) {
-            
             const newComment = document.createElement('div');
             newComment.classList.add('comment');
             newComment.textContent = commentText;
-
-            
             commentsDisplay.appendChild(newComment);
-
-           
             commentInput.value = '';
         }
     });
 });
 
-
-// Submit Comment Functionality
-const submitCommentButton = document.querySelector('.submit-comment');
-const commentInput = document.querySelector('.comment-input');
-const commentsDisplay = document.querySelector('.comments-display');
-
-if (submitCommentButton && commentInput && commentsDisplay) {
-    submitCommentButton.addEventListener('click', () => {
-        const commentText = commentInput.value.trim(); 
-
-        if (commentText) {
-            const newComment = document.createElement('div');
-            newComment.classList.add('comment');
-            newComment.textContent = commentText;
-
-            commentsDisplay.appendChild(newComment); 
-            commentInput.value = ''; 
-        }
-    });
-}
-
-// Get search input and button elements
+// Search Functionality
 const searchInput = document.querySelector('.search-input');
 const searchButton = document.querySelector('.search-button');
-const newsCards = document.querySelectorAll('.news-card'); // Select all news cards
+const newsCards = document.querySelectorAll('.news-card');
 
-// Search function to filter news cards
 function searchNews() {
-    const query = searchInput.value.toLowerCase().trim(); // Get input value and trim spaces
-
+    const query = searchInput.value.toLowerCase().trim();
     newsCards.forEach(card => {
         const heading = card.querySelector('.news-heading').textContent.toLowerCase();
         const description = card.querySelector('.news-description').textContent.toLowerCase();
         const meta = card.querySelector('.news-date').textContent.toLowerCase();
-
-        // Check if query matches heading, description, or metadata
-        if (heading.includes(query) || description.includes(query) || meta.includes(query)) {
-            card.style.display = 'block'; // Show matching cards
-        } else {
-            card.style.display = 'none'; // Hide non-matching cards
-        }
+        card.style.display = heading.includes(query) || description.includes(query) || meta.includes(query) ? 'block' : 'none';
     });
 }
 
-// Add event listeners for search input and button click
-searchInput.addEventListener('input', searchNews); // Live search on typing
-searchButton.addEventListener('click', searchNews); // Search on button click
-
-
+if (searchInput && searchButton) {
+    searchInput.addEventListener('input', searchNews);
+    searchButton.addEventListener('click', searchNews);
+}
