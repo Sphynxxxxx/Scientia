@@ -181,4 +181,21 @@ figcaption {
     .submit-comment {
         width: 100%; /* Full width for comment button on small screens */
     }
+    
+    .about-section, 
+    .contact-section {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    .about-section h3, 
+    .about-section h2, 
+    .contact-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section figcaption {
+        font-size: 1.2rem;
+    }
+
 }
