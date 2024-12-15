@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="content\css\styles.css">
     <title>Scientia</title>
 </head>
 
@@ -34,12 +34,15 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.php" class="nav-link">Home</a></li>
                     <li><a href="#" class="nav-link">Profile</a></li>
-                    <li><a href="AboutUs.html" class="nav-link">About Us</a></li>
+                    <li><a href="content\AboutUs.php" class="nav-link">About Us</a></li>
                     <li>
-                        <button class="login-button" id="loginRegisterButton">Login/Register</button>
+                        <button class="login-button">
+                            <a href="content/form.php" style="text-decoration: none; color: inherit;">Login/Register</a>
+                        </button>
                     </li>
+
                 </ul>
             </nav>
             <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i>
@@ -97,7 +100,7 @@
             <div class="news-grid">
             
                 <div class="news-card">
-                    <img src="assets/exoplanet.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/exoplanet.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">Astronomers Discover New Exoplanet</h3>
                         <p class="news-description">
@@ -111,7 +114,7 @@
         
                 
                 <div class="news-card">
-                    <img src="assets/lunar-activities.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/lunar-activities.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">NASA Announces New Lunar Mission</h3>
                         <p class="news-description">
@@ -125,7 +128,7 @@
         
                 
                 <div class="news-card">
-                    <img src="assets/Comet-ISON.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/Comet-ISON.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">Comet to Pass Close to Earth</h3>
                         <p class="news-description">
@@ -138,7 +141,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/magellan_orbit-768x577.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/magellan_orbit-768x577.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">30 years ago: Magellan Venus mission successfully concluded</h3>
                         <p class="news-description">
@@ -151,7 +154,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/Tania-Wood-88-768x509.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/Tania-Wood-88-768x509.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">The best images of the Oct. 10 auroral storm</h3>
                         <p class="news-description">
@@ -164,7 +167,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/europa-clipper-art-768x432.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/europa-clipper-art-768x432.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">All about NASA’s Europa Clipper, launching soon for Jupiter</h3>
                         <p class="news-description">
@@ -177,7 +180,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/Ashokan-Reservoir_NY_Chirag-Upreti-1200x796.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/Ashokan-Reservoir_NY_Chirag-Upreti-1200x796.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">Earth sees strong aurorae Oct. 10 as solar storm hits ‘severe’ G4 level</h3>
                         <p class="news-description">
@@ -190,7 +193,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/Morehouses-black-ring.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/Morehouses-black-ring.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">How we found Morehouse’s Black Ring: A dark nebula hiding in plain sight</h3>
                         <p class="news-description">
@@ -203,7 +206,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/clipper.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/clipper.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">Europa Clipper launch postponed until at least Oct. 13 due to Hurricane Milton</h3>
                         <p class="news-description">
@@ -216,7 +219,7 @@
                 </div>
 
                 <div class="news-card">
-                    <img src="assets/Comet Tsuchinshan.webp" alt="News Image" class="news-image">
+                    <img src="content/assets/Comet Tsuchinshan.webp" alt="News Image" class="news-image">
                     <div class="news-content">
                         <h3 class="news-heading">Comet Tsuchinshan-ATLAS is rising higher in the evening sky. Here’s where to look</h3>
                         <p class="news-description">
@@ -234,19 +237,19 @@
             <h2 class="related-title">Related Posts</h2>
             <div class="related-grid">
                 <div class="related-card">
-                    <img src="assets/Earth-and-a-blackhole-768x542.webp" alt="Related Post" class="related-image">
+                    <img src="content/assets/Earth-and-a-blackhole-768x542.webp" alt="Related Post" class="related-image">
                     <h3 class="related-heading">What are the chances of dark matter or a black hole ripping apart Earth?</h3>
                     <p class="related-description">The odds of dark matter or a rogue black hole tearing Earth apart are astronomically slim—our planet is safe from cosmic doomsday.</p>
                 </div>
 
                 <div class="related-card">
-                    <img src="assets/ASY-SK0724_03-768x754.webp" alt="Related Post" class="related-image">
+                    <img src="content/assets/ASY-SK0724_03-768x754.webp" alt="Related Post" class="related-image">
                     <h3 class="related-heading">How do Cepheid variables indicate distance?</h3>
                     <p class="related-description">Cepheid variables pulse like cosmic beacons, revealing their distance through the rhythm of their light.</p>
                 </div>
 
                 <div class="related-card">
-                    <img src="assets/TESS_V7-768x442.webp" alt="Related Post" class="related-image">
+                    <img src="content/assets/TESS_V7-768x442.webp" alt="Related Post" class="related-image">
                     <h3 class="related-heading">How is TESS able to spot more planets in the sky than Kepler could?</h3>
                     <p class="related-description">TESS scans a broader sky area with wider lenses, capturing more stars and increasing the chances of discovering new planets.</p>
                 </div>
@@ -266,6 +269,6 @@
             </div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="content/js/script.js"></script>
 </body>
 </html>

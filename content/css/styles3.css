@@ -15,7 +15,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/3d-render-solar-system-background-with-colourful-nebula.jpg');
+    background-image: url('../assets/3d-render-solar-system-background-with-colourful-nebula.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
