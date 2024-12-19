@@ -24,7 +24,7 @@
             </form>
             <div class="options">
                 <label><input type="checkbox"> Remember Me</label>
-                <a href="#">Forgot password?</a>
+                <a href="admin.php">Admin</a>
             </div>
             <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
         </div>

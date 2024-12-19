@@ -6,8 +6,8 @@
     <title>About Us | Scientia</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles2.css">
 </head>
 <body>
     <header>
@@ -22,9 +22,9 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.php" class="nav-link">Home</a></li>
                 <li><a href="#" class="nav-link">Profile</a></li>
-                <li><a href="AboutUs.html" class="nav-link" id="aboutus-button">About Us</a></li>
+                <li><a href="AboutUs.php" class="nav-link" id="aboutus-button">About Us</a></li>
                 <li>
                     <button class="login-button" id="loginRegisterButton">Login/Register</button>
                 </li>

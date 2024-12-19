@@ -1,14 +1,11 @@
-
+/* General Styling */
 .article-container {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
     font-family: 'Arial', sans-serif;
-    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .article-title {
     font-size: 2rem;
@@ -16,7 +13,6 @@
     margin-bottom: 10px;
     color: #1a1a1a;
 }
-
 
 .article-subtitle {
     font-size: 1.2rem;
@@ -31,9 +27,28 @@
     margin-bottom: 20px;
 }
 
-.article-meta a {
+.article-meta span {
+    margin-right: 10px;
+}
+
+.article-meta .author {
+    font-weight: bold;
+}
+
+.article-meta .published-date {
     color: #0073e6;
-    text-decoration: none;
+}
+
+.article-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.article-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .media-container {
@@ -53,12 +68,48 @@ figcaption {
     margin-top: 5px;
 }
 
+.delete-btn {
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-.article-content p {
-    font-size: 1rem;
-    line-height: 1.6;
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+.post-item {
+    margin-bottom: 40px;  /* More space between posts */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for each post */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the box */
+}
+
+.post-item h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.post-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.post-item .post-content-wrapper {
+    margin-top: 20px;
+}
+
+.post-item .post-content-wrapper p {
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: #333;
-    margin-bottom: 15px;
 }
 
 .interaction-container {
@@ -163,8 +214,7 @@ figcaption {
 
 }
 
-/* End of Planet Article Section */
-/*Responsiveness*/
+/* Responsiveness */
 @media (max-width: 768px) {
     .article-container {
         padding: 10px;
@@ -178,24 +228,12 @@ figcaption {
     .article-subtitle {
         font-size: 1rem;
     }
-    .submit-comment {
-        width: 100%; /* Full width for comment button on small screens */
-    }
-    
-    .about-section, 
-    .contact-section {
-        padding: 15px;
-        font-size: 1.2rem;
+
+    .article-meta {
+        font-size: 0.8rem;
     }
 
-    .about-section h3, 
-    .about-section h2, 
-    .contact-section h2 {
-        font-size: 1.8rem;
+    .delete-btn {
+        width: 100%; /* Full width for delete button on small screens */
     }
-
-    .about-section figcaption {
-        font-size: 1.2rem;
-    }
-
 }

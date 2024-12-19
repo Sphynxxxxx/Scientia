@@ -1,3 +1,47 @@
+<?php
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$dbname = 'scientia';
+
+$conn = new mysqli($host, $user, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, title, subtitle, author, published_date, image, description, created_at FROM posts ORDER BY created_at DESC LIMIT 10";
+$result = $conn->query($sql);
+
+$posts = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $posts[] = $row;
+    }
+} else {
+    echo "No posts found.";
+}
+
+$current_post_id = $posts[0]['id'];
+
+$sql_random = "SELECT id, title, subtitle, image, description FROM posts WHERE id != ? ORDER BY RAND() LIMIT 3";
+$stmt_random = $conn->prepare($sql_random);
+$stmt_random->bind_param("i", $current_post_id);  
+$stmt_random->execute();
+$result_random = $stmt_random->get_result();
+
+$related_posts = [];
+if ($result_random->num_rows > 0) {
+    while ($row = $result_random->fetch_assoc()) {
+        $related_posts[] = $row;
+    }
+} else {
+    echo "No related posts found.";
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +80,7 @@
                     </div>
                     <li><a href="index.php" class="nav-link">Home</a></li>
                     <li><a href="#" class="nav-link">Profile</a></li>
-                    <li><a href="content\AboutUs.php" class="nav-link">About Us</a></li>
+                    <li><a href="content/AboutUs.php" class="nav-link">About Us</a></li>
                     <li>
                         <button class="login-button">
                             <a href="content/form.php" style="text-decoration: none; color: inherit;">Login/Register</a>
@@ -50,30 +94,19 @@
         <section class="dropdown-nav">
             <ul class="dropdown-links">
                 <li class="dropdown">
-                    <a href="index.html" class="dropdown-link">News</a>
-                </li>
-                <li class="dropdown">
                     <a href="#" class="dropdown-link">Discover the Cosmos<i class="fa-solid fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="Planets.html">Planets</a></li>
-                        <li><a href="stars.html">Stars</a></li>
-                        <li><a href="galaxy.html">Galaxies</a></li>
+                        <li><a href="Subcategories/Planets.php">Planets</a></li>
+                        <li><a href="Subcategories/stars.php">Stars</a></li>
+                        <li><a href="Subcategories/galaxy.php">Galaxies</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-link">Observation Hub<i class="fa-solid fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Telescope Setup</a></li>
-                        <li><a href="#">Stargazing Tips</a></li>
-                        <li><a href="#">Astronomy Events</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-link">Science & Mysteries<i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="Subcategories/Telescope_Setup.php">Telescope Setup</a></li>
+                        <li><a href="Subcategories/Stargazing_Tips.php">Stargazing Tips</a></li>
+                        <li><a href="Subcategories/Astronomy_Events.php">Astronomy Events</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -98,163 +131,39 @@
         <section class="news-section">
             <h2 class="news-title">Latest News</h2>
             <div class="news-grid">
-            
-                <div class="news-card">
-                    <img src="content/assets/exoplanet.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">Astronomers Discover New Exoplanet</h3>
-                        <p class="news-description">
-                            A newly discovered exoplanet raises the possibility of habitable conditions beyond Earth.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 15, 2024</span>
+                <?php foreach ($posts as $post): ?>
+                    <div class="news-card">
+                        <img src="content/uploads/<?php echo htmlspecialchars($post['image']); ?>" alt="News Image" class="news-image">
+                        <div class="news-content">
+                            <h3 class="news-heading"><?php echo htmlspecialchars($post['title']); ?></h3>
+                            <p class="news-description">
+                                <?php echo htmlspecialchars($post['description']); ?>
+                            </p>
+                            <div class="news-meta">
+                                <span class="news-date"><?php echo date('F j, Y', strtotime($post['created_at'])); ?></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-        
-                
-                <div class="news-card">
-                    <img src="content/assets/lunar-activities.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">NASA Announces New Lunar Mission</h3>
-                        <p class="news-description">
-                            The Artemis program is preparing for a return to the Moon with advanced technology.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 14, 2024</span>
-                        </div>
-                    </div>
-                </div>
-        
-                
-                <div class="news-card">
-                    <img src="content/assets/Comet-ISON.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">Comet to Pass Close to Earth</h3>
-                        <p class="news-description">
-                            Stargazers are in for a treat as the rare comet C/2024 Q1 will be visible this month.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 13, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/magellan_orbit-768x577.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">30 years ago: Magellan Venus mission successfully concluded</h3>
-                        <p class="news-description">
-                            Thirty years ago, NASA's Magellan mission to Venus concluded after mapping 98% of the planet's surface, revolutionizing our understanding of its geology.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 15, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/Tania-Wood-88-768x509.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">The best images of the Oct. 10 auroral storm</h3>
-                        <p class="news-description">
-                            Auroral storm dazzled skywatchers with breathtaking displays of vibrant green, purple, and red auroras, stretching across the night skies from high latitudes to unexpected southern regions.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 11, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/europa-clipper-art-768x432.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">All about NASA’s Europa Clipper, launching soon for Jupiter</h3>
-                        <p class="news-description">
-                            NASA’s Europa Clipper, set to launch soon, will embark on a journey to explore Jupiter’s moon Europa, searching for signs of a subsurface ocean and potential habitability.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 14, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/Ashokan-Reservoir_NY_Chirag-Upreti-1200x796.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">Earth sees strong aurorae Oct. 10 as solar storm hits ‘severe’ G4 level</h3>
-                        <p class="news-description">
-                            Aurorae may be visible tonight as far south as Alabama, and high-frequency radio impacts have already been reported.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 10, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/Morehouses-black-ring.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">How we found Morehouse’s Black Ring: A dark nebula hiding in plain sight</h3>
-                        <p class="news-description">
-                            Discover how astronomers identified Morehouse’s Black Ring, a hidden dark nebula obscuring starlight, lurking undetected in the vast expanse of space.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 16, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/clipper.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">Europa Clipper launch postponed until at least Oct. 13 due to Hurricane Milton</h3>
-                        <p class="news-description">
-                            NASA's highly anticipated Europa Clipper mission has been postponed until at least October 13, 2024, following disruptions caused by Hurricane Milton.
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 13, 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <img src="content/assets/Comet Tsuchinshan.webp" alt="News Image" class="news-image">
-                    <div class="news-content">
-                        <h3 class="news-heading">Comet Tsuchinshan-ATLAS is rising higher in the evening sky. Here’s where to look</h3>
-                        <p class="news-description">
-                            Starting around October 14, 2024, Comet Tsuchinshan-ATLAS (C/2023 A3) will become visible in the early evening, making it easier to spot without the glare of the Sun. 
-                        </p>
-                        <div class="news-meta">
-                            <span class="news-date">October 14, 2024</span>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </section>
+
+                
         
         <section class="related-posts">
             <h2 class="related-title">Related Posts</h2>
             <div class="related-grid">
-                <div class="related-card">
-                    <img src="content/assets/Earth-and-a-blackhole-768x542.webp" alt="Related Post" class="related-image">
-                    <h3 class="related-heading">What are the chances of dark matter or a black hole ripping apart Earth?</h3>
-                    <p class="related-description">The odds of dark matter or a rogue black hole tearing Earth apart are astronomically slim—our planet is safe from cosmic doomsday.</p>
-                </div>
-
-                <div class="related-card">
-                    <img src="content/assets/ASY-SK0724_03-768x754.webp" alt="Related Post" class="related-image">
-                    <h3 class="related-heading">How do Cepheid variables indicate distance?</h3>
-                    <p class="related-description">Cepheid variables pulse like cosmic beacons, revealing their distance through the rhythm of their light.</p>
-                </div>
-
-                <div class="related-card">
-                    <img src="content/assets/TESS_V7-768x442.webp" alt="Related Post" class="related-image">
-                    <h3 class="related-heading">How is TESS able to spot more planets in the sky than Kepler could?</h3>
-                    <p class="related-description">TESS scans a broader sky area with wider lenses, capturing more stars and increasing the chances of discovering new planets.</p>
-                </div>
+                <?php foreach ($related_posts as $related_post): ?>
+                    <div class="related-card">
+                        <img src="content/uploads/<?php echo htmlspecialchars($related_post['image']); ?>" alt="Related Post" class="related-image">
+                        <h3 class="related-heading"><?php echo htmlspecialchars($related_post['title']); ?></h3>
+                        <p class="related-description"><?php echo htmlspecialchars($related_post['description']); ?></p>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </section>
+
+
 
         <footer>
             <div class="footer-content">

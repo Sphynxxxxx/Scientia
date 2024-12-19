@@ -108,3 +108,27 @@ if (searchInput && searchButton) {
     searchInput.addEventListener('input', searchNews);
     searchButton.addEventListener('click', searchNews);
 }
+
+
+
+function toggleCommentBox(postId) {
+    const commentForm = document.getElementById("commentForm" + postId); 
+    if (commentForm.style.display === "none" || commentForm.style.display === "") {
+        commentForm.style.display = "block";
+    } else {
+        commentForm.style.display = "none"; 
+    }
+}
+
+
+function copyToClipboard(url) {
+    const tempInput = document.createElement('input');
+    document.body.appendChild(tempInput);
+    tempInput.value = url;
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    alert("URL copied to clipboard!");
+}
+
+

@@ -1,5 +1,6 @@
 <?php
-include 'config.php';
+session_start();
+include '../content/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
@@ -10,27 +11,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows === 1) {
+    if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
-            echo "<script>
-                    alert('Login successful!');
-                    window.location.href = '../index.php';
-                  </script>";
+            $_SESSION['id'] = $user['id']; 
+            header('Location: ../index.php');
+            exit;
         } else {
-            echo "<script>
-                    alert('Invalid password!');
-                    window.location.href = 'form.php';
-                  </script>";
+            echo "Invalid password!";
         }
     } else {
-        echo "<script>
-                alert('User not found!');
-                window.location.href = 'form.php';
-              </script>";
+        echo "No user found with that email!";
     }
-
-    $stmt->close();
 }
-$conn->close();
 ?>
+
+
